@@ -1,19 +1,6 @@
 pipeline {
      agent any
      stages {
-          stage("Compile") {
-               steps {
-                    sh "python3 calculator.py"
-               }
-          }
-               }
-          }
-          stage("Package") {
-               steps {
-                    sh "python3 build"
-               }
-          }
-
           stage("Docker build") {
                steps {
                     sh "docker build -t iimann/calculator ."
@@ -24,5 +11,11 @@ pipeline {
                     sh "docker push iimann/calculator"
                }
           }
+          stage("Compile") {
+               steps {
+                    sh "python3 calculator.py"
+               }
+          }
+
      }
 }
