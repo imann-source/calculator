@@ -3,17 +3,17 @@ pipeline {
      stages {
           stage("Docker build") {
                steps {
-                    sh "docker build -t iimann/calculator ."
+                    sh "sudo docker build -t iimann/calculator ."
                }
           }
           stage("Docker push") {
                steps {
-                    sh "docker push iimann/calculator"
+                    sh "sudo docker push iimann/calculator"
                }
           }
           stage("Compile") {
                steps {
-                    sh "docker run --name calculator --rm -d -p 80:80 iimann/calculator"
+                    sh "sudo docker run --name calculator --rm -d -p 80:80 iimann/calculator"
                }
           }
 
