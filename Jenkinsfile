@@ -3,7 +3,7 @@ pipeline {
      stages {
           stage("Docker build") {
                steps {
-                    sh "docker build . -t iimann/calculator ."
+                    sh "docker build -t iimann/calculator ."
                }
           }
           stage("Docker push") {
