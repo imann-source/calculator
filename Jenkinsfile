@@ -1,16 +1,16 @@
 pipeline {
      agent any
      stages {
-          stage("Docker build") {
-               steps {
-                    sh "sudo docker build -t iimann/calculator ."
-               }
-          }
-          stage("Compile") {
-               steps {
-                    sh "sudo docker run --name calculator --rm -d -p 80:80 iimann/calculator"
-               }
-          }
+          stage('Run python script') {
+            steps {
+                sh 'python3 calculator.py'
+            }
+        }
+        stage('Create docker image') {
+            steps {
+                sh 'docker build -t iimann/calculator .'
+            }
+        }
 
      }
 }
