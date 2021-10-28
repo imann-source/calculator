@@ -3,12 +3,12 @@ pipeline {
      stages {
           stage('Run python script') {
             steps {
-                sh 'python ./calculator.py'
+                sh 'python3 ./calculator.py'
             }
         }
         stage('Create docker image') {
             steps {
-                sh 'docker build -t iimann/calculator .'
+                sh 'sudo docker build -t iimann/calculator .'
             }
         }
 
