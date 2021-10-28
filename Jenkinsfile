@@ -3,7 +3,7 @@ pipeline {
      stages {
           stage('Run python script') {
             steps {
-                sh 'python3 calculator.py'
+                sh 'python ./calculator.py'
             }
         }
         stage('Create docker image') {
