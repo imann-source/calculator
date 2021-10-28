@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+ 
 print('Калькулятор Запущен')
 answer = str(input('Хотите поработать на калькуляторе? [y], [n]'))
 while answer != 'n':
