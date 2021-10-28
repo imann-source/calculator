@@ -1,8 +1,6 @@
  # -*- coding: utf-8 -*-
  
 print('Калькулятор Запущен')
-answer = str(input('Want to work on a calculator? [y], [n]'))
-while answer != 'n':
     res1 = int()
     res2 = int()
     res3 = int()
@@ -44,6 +42,5 @@ while answer != 'n':
             print('Нет такого значения!')
     else:
         print('Такого значения нет!')
-    answer = (input('Хотите продолжить работу? "y" or "n" '))
 
 print('Досвидания! Удачи!')
